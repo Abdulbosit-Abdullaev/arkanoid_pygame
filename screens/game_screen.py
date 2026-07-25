@@ -20,10 +20,10 @@ def apply_bonus(kind: str, paddle: Paddle, ball: Ball) -> None:
     ``game.entities.POWER_UPS``.
     """
     if kind == "extend":
-        paddle.resize(cfg.PADDLE_RESIZE_STEP)          # widen the paddle
+        paddle.resize(cfg.PADDLE_RESIZE_STEP)          
     elif kind == "paddle_shrink":
-        paddle.resize(-cfg.PADDLE_RESIZE_STEP)         # narrow the paddle
+        paddle.resize(-cfg.PADDLE_RESIZE_STEP)         
     elif kind == "ball_speed_up":
-        ball.change_speed(cfg.BALL_SPEED_FACTOR)       # make the ball faster
+        ball.change_speed(cfg.BALL_SPEED_FACTOR)       
     elif kind == "ball_speed_down":
-        ball.change_speed(1 / cfg.BALL_SPEED_FACTOR)   # make the ball slower
+        ball.change_speed(1 / cfg.BALL_SPEED_FACTOR) 
