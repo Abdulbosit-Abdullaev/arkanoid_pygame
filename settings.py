@@ -28,16 +28,31 @@ FIELD_RIGHT = FIELD_LEFT + FIELD_COLS * BRICK_WIDTH
 # --- Paddle, Ball -----------------------------------------------------------
 PADDLE_WIDTH, PADDLE_HEIGHT = 100, 12
 PADDLE_SPEED = 7
+PADDLE_MIN_WIDTH = 60    # Smallest the paddle can shrink to
+PADDLE_MAX_WIDTH = 180   # Largest the paddle can extend to
+PADDLE_RESIZE_STEP = 30  # Width change per extend / shrink power-up
 
 BALL_RADIUS = 8
 BALL_SPEED_X = 4
 BALL_SPEED_Y = -5
 SLIDE_FACTOR = 0.8
 MAX_BALL_SPEED_X = 8
+MAX_BOUNCE_ANGLE = 60    # Steepest bounce off the paddle's edge, in degrees
+MIN_BOUNCE_ANGLE = 15    # Flattest bounce, so a centered hit never goes straight up
+BALL_SPEED_FACTOR = 1.3  # Multiplier for the speed up / speed down power-ups
+BALL_MIN_SPEED = 4       # Lower clamp for the ball's total speed
+BALL_MAX_SPEED = 11      # Upper clamp for the ball's total speed
+
+# --- Lives, Scoring ----------------------------------------------------------
+START_LIVES = 3       # Lives the player starts with
+BRICK_SCORE = 10      # Points for destroying one brick
 
 # --- Bonuses ---------------------------------------------------------------------
+# The power-ups themselves (letter + color) are listed in game/entities.py -> POWER_UPS
 BONUS_PROBABILITY = 0.3  # Chance that destroyed brick will drop a bonus
-BONUS_TYPES = ["extend", "multiball", "laser", "extra_life"]
+
+POWERUP_SIZE = 20        # Falling power-up capsule size (px)
+POWERUP_FALL_SPEED = 3   # How fast power-ups fall towards the paddle
 
 # --- Visual Effects -----------------------------------------------------------
 TRAIL_LENGTH = 6  # Ball's Motion Trail Length
